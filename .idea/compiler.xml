@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-manager-dao (2)" />
+        <module name="flower-manager-pojo (2)" />
+      </profile>
+      <profile default="false" name="Annotation profile for flower-manager-web" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-manager-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for flower-manager-dao" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-manager-dao" />
+      </profile>
+      <profile default="false" name="Annotation profile for flower-comm" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-comm" />
+      </profile>
+      <profile default="false" name="Annotation profile for flower-manager-pojo" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-manager-pojo" />
+      </profile>
+      <profile default="false" name="Annotation profile for flower-manager-interface" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-manager-interface" />
+      </profile>
+      <profile default="false" name="Annotation profile for flower-manager-service" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="flower-manager-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flower-comm" target="1.7" />
+      <module name="flower-manager" target="1.7" />
+      <module name="flower-manager-dao" target="1.7" />
+      <module name="flower-manager-dao (1)" target="1.5" />
+      <module name="flower-manager-dao (2)" target="1.7" />
+      <module name="flower-manager-interface" target="1.7" />
+      <module name="flower-manager-pojo" target="1.7" />
+      <module name="flower-manager-pojo (1)" target="1.5" />
+      <module name="flower-manager-pojo (2)" target="1.7" />
+      <module name="flower-manager-service" target="1.7" />
+      <module name="flower-manager-web" target="1.7" />
+      <module name="flower-parent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

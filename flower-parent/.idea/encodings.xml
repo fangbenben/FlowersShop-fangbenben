@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/../flower-comm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager/flower-manager-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager/flower-manager-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager/flower-manager-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager/flower-manager-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../flower-manager/flower-manager-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

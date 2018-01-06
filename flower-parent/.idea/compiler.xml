@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="flower-comm" />
+        <module name="flower-manager-dao (2)" />
+        <module name="flower-manager-interface" />
+        <module name="flower-manager-pojo" />
+        <module name="flower-manager-pojo (1)" />
+        <module name="flower-manager-service" />
+        <module name="flower-manager-web" />
+      </profile>
+      <profile name="Annotation profile for flower-manager-dao (1)" enabled="true">
+        <sourceOutputDir name="../flower-manager/flower-manager-dao/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../flower-manager/flower-manager-dao/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="flower-manager-dao (1)" />
+      </profile>
+      <profile name="Annotation profile for flower-manager-dao" enabled="true">
+        <sourceOutputDir name="../flower-manager/flower-manager-dao/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../flower-manager/flower-manager-dao/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="flower-manager-dao" />
+      </profile>
+      <profile name="Annotation profile for flower-parent" enabled="true">
+        <sourceOutputDir name="../../flower-manager-pojo/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../flower-manager-pojo/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="flower-manager-pojo (2)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flower-comm" target="1.7" />
+      <module name="flower-manager" target="1.7" />
+      <module name="flower-manager-dao" target="1.7" />
+      <module name="flower-manager-dao (1)" target="1.7" />
+      <module name="flower-manager-dao (2)" target="1.7" />
+      <module name="flower-manager-interface" target="1.7" />
+      <module name="flower-manager-pojo" target="1.7" />
+      <module name="flower-manager-pojo (1)" target="1.7" />
+      <module name="flower-manager-pojo (2)" target="1.7" />
+      <module name="flower-manager-service" target="1.7" />
+      <module name="flower-manager-web" target="1.7" />
+      <module name="flower-parent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
+  </component>
+</project>

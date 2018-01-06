@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.flower.dao.TbCommodityMapper" >
+  <resultMap id="BaseResultMap" type="com.flower.pojo.po.TbCommodity" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="wishes" property="wishes" jdbcType="VARCHAR" />
+    <result column="marketprice" property="marketprice" jdbcType="VARCHAR" />
+    <result column="vipprice" property="vipprice" jdbcType="VARCHAR" />
+    <result column="attache" property="attache" jdbcType="VARCHAR" />
+    <result column="distribution" property="distribution" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="mate_id" property="mateId" jdbcType="VARCHAR" />
+    <result column="cate_id" property="cateId" jdbcType="VARCHAR" />
+    <result column="kind_id" property="kindId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, title, wishes, marketprice, vipprice, attache, distribution, description, createtime, 
+    count, status, mate_id, cate_id, kind_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.flower.pojo.po.TbCommodityExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_commodity
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_commodity
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.flower.pojo.po.TbCommodityExample" >
+    delete from tb_commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.flower.pojo.po.TbCommodity" >
+    insert into tb_commodity (id, title, wishes, 
+      marketprice, vipprice, attache, 
+      distribution, description, createtime, 
+      count, status, mate_id, 
+      cate_id, kind_id)
+    values (#{id,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{wishes,jdbcType=VARCHAR}, 
+      #{marketprice,jdbcType=VARCHAR}, #{vipprice,jdbcType=VARCHAR}, #{attache,jdbcType=VARCHAR}, 
+      #{distribution,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{count,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{mateId,jdbcType=VARCHAR}, 
+      #{cateId,jdbcType=VARCHAR}, #{kindId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.flower.pojo.po.TbCommodity" >
+    insert into tb_commodity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="wishes != null" >
+        wishes,
+      </if>
+      <if test="marketprice != null" >
+        marketprice,
+      </if>
+      <if test="vipprice != null" >
+        vipprice,
+      </if>
+      <if test="attache != null" >
+        attache,
+      </if>
+      <if test="distribution != null" >
+        distribution,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="mateId != null" >
+        mate_id,
+      </if>
+      <if test="cateId != null" >
+        cate_id,
+      </if>
+      <if test="kindId != null" >
+        kind_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="wishes != null" >
+        #{wishes,jdbcType=VARCHAR},
+      </if>
+      <if test="marketprice != null" >
+        #{marketprice,jdbcType=VARCHAR},
+      </if>
+      <if test="vipprice != null" >
+        #{vipprice,jdbcType=VARCHAR},
+      </if>
+      <if test="attache != null" >
+        #{attache,jdbcType=VARCHAR},
+      </if>
+      <if test="distribution != null" >
+        #{distribution,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="mateId != null" >
+        #{mateId,jdbcType=VARCHAR},
+      </if>
+      <if test="cateId != null" >
+        #{cateId,jdbcType=VARCHAR},
+      </if>
+      <if test="kindId != null" >
+        #{kindId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.flower.pojo.po.TbCommodityExample" resultType="java.lang.Integer" >
+    select count(*) from tb_commodity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_commodity
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wishes != null" >
+        wishes = #{record.wishes,jdbcType=VARCHAR},
+      </if>
+      <if test="record.marketprice != null" >
+        marketprice = #{record.marketprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vipprice != null" >
+        vipprice = #{record.vipprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.attache != null" >
+        attache = #{record.attache,jdbcType=VARCHAR},
+      </if>
+      <if test="record.distribution != null" >
+        distribution = #{record.distribution,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.count != null" >
+        count = #{record.count,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.mateId != null" >
+        mate_id = #{record.mateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cateId != null" >
+        cate_id = #{record.cateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.kindId != null" >
+        kind_id = #{record.kindId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_commodity
+    set id = #{record.id,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      wishes = #{record.wishes,jdbcType=VARCHAR},
+      marketprice = #{record.marketprice,jdbcType=VARCHAR},
+      vipprice = #{record.vipprice,jdbcType=VARCHAR},
+      attache = #{record.attache,jdbcType=VARCHAR},
+      distribution = #{record.distribution,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      count = #{record.count,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=INTEGER},
+      mate_id = #{record.mateId,jdbcType=VARCHAR},
+      cate_id = #{record.cateId,jdbcType=VARCHAR},
+      kind_id = #{record.kindId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.flower.pojo.po.TbCommodity" >
+    update tb_commodity
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="wishes != null" >
+        wishes = #{wishes,jdbcType=VARCHAR},
+      </if>
+      <if test="marketprice != null" >
+        marketprice = #{marketprice,jdbcType=VARCHAR},
+      </if>
+      <if test="vipprice != null" >
+        vipprice = #{vipprice,jdbcType=VARCHAR},
+      </if>
+      <if test="attache != null" >
+        attache = #{attache,jdbcType=VARCHAR},
+      </if>
+      <if test="distribution != null" >
+        distribution = #{distribution,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="mateId != null" >
+        mate_id = #{mateId,jdbcType=VARCHAR},
+      </if>
+      <if test="cateId != null" >
+        cate_id = #{cateId,jdbcType=VARCHAR},
+      </if>
+      <if test="kindId != null" >
+        kind_id = #{kindId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.flower.pojo.po.TbCommodity" >
+    update tb_commodity
+    set title = #{title,jdbcType=VARCHAR},
+      wishes = #{wishes,jdbcType=VARCHAR},
+      marketprice = #{marketprice,jdbcType=VARCHAR},
+      vipprice = #{vipprice,jdbcType=VARCHAR},
+      attache = #{attache,jdbcType=VARCHAR},
+      distribution = #{distribution,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      count = #{count,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      mate_id = #{mateId,jdbcType=VARCHAR},
+      cate_id = #{cateId,jdbcType=VARCHAR},
+      kind_id = #{kindId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

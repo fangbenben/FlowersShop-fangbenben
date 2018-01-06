@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.flower.dao.TbCommUseMapper" >
+  <resultMap id="BaseResultMap" type="com.flower.pojo.po.TbCommUse" >
+    <id column="comm_id" property="commId" jdbcType="VARCHAR" />
+    <result column="use_id" property="useId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    comm_id, use_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.flower.pojo.po.TbCommUseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_comm_use
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_comm_use
+    where comm_id = #{commId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_comm_use
+    where comm_id = #{commId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.flower.pojo.po.TbCommUseExample" >
+    delete from tb_comm_use
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.flower.pojo.po.TbCommUse" >
+    insert into tb_comm_use (comm_id, use_id)
+    values (#{commId,jdbcType=VARCHAR}, #{useId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.flower.pojo.po.TbCommUse" >
+    insert into tb_comm_use
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commId != null" >
+        comm_id,
+      </if>
+      <if test="useId != null" >
+        use_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commId != null" >
+        #{commId,jdbcType=VARCHAR},
+      </if>
+      <if test="useId != null" >
+        #{useId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.flower.pojo.po.TbCommUseExample" resultType="java.lang.Integer" >
+    select count(*) from tb_comm_use
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_comm_use
+    <set >
+      <if test="record.commId != null" >
+        comm_id = #{record.commId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.useId != null" >
+        use_id = #{record.useId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_comm_use
+    set comm_id = #{record.commId,jdbcType=VARCHAR},
+      use_id = #{record.useId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.flower.pojo.po.TbCommUse" >
+    update tb_comm_use
+    <set >
+      <if test="useId != null" >
+        use_id = #{useId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where comm_id = #{commId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.flower.pojo.po.TbCommUse" >
+    update tb_comm_use
+    set use_id = #{useId,jdbcType=VARCHAR}
+    where comm_id = #{commId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/flower-comm/flower-comm.iml" filepath="$PROJECT_DIR$/flower-comm/flower-comm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-manager/flower-manager.iml" filepath="$PROJECT_DIR$/flower-manager/flower-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-manager/flower-manager-dao/flower-manager-dao.iml" filepath="$PROJECT_DIR$/flower-manager/flower-manager-dao/flower-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-manager/flower-manager-interface/flower-manager-interface.iml" filepath="$PROJECT_DIR$/flower-manager/flower-manager-interface/flower-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-manager/flower-manager-pojo/flower-manager-pojo.iml" filepath="$PROJECT_DIR$/flower-manager/flower-manager-pojo/flower-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-manager/flower-manager-service/flower-manager-service.iml" filepath="$PROJECT_DIR$/flower-manager/flower-manager-service/flower-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-manager/flower-manager-web/flower-manager-web.iml" filepath="$PROJECT_DIR$/flower-manager/flower-manager-web/flower-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flower-parent/flower-parent.iml" filepath="$PROJECT_DIR$/flower-parent/flower-parent.iml" />
+    </modules>
+  </component>
+</project>
